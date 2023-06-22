@@ -14,6 +14,26 @@ output:
 
 [TOC]
 
+<div STYLE="page-break-after: always;"></div>
+
+## 免责声明
+
+阅读本教程，表示您同意并遵守以下协议内容：
+
+1. 本文所提供的所有信息、资料、内容、产品和服务仅供参考之用，不保证其准确性、完整性和实用性。用户在使用本文提供的信息、资料、内容、产品和服务前，请先进行自己的判断和确认，并承担由此产生的全部风险和责任。
+2. 本文所提供的产品和服务可能涉及到第三方的产品和服务，本文对第三方产品和服务的安全性、合法性、适用性和可靠性不承担任何责任。用户在使用第三方产品和服务前，应先仔细阅读相关条款并自行判断和确认，本文对因使用第三方产品和服务产生的一切损失和责任不承担任何责任。
+3. 本文所提供的链接和内容可能涉及到第三方网站，本文对第三方网站的内容、隐私策略、安全性和合法性不承担任何责任。用户在访问第三方网站前，应先仔细阅读相关条款并自行判断和确认，本文对因访问第三方网站产生的一切损失和责任不承担任何责任。
+4. 本文所提供的信息、资料、内容、产品和服务可能因各种原因发生变化，本文不承担任何通知的责任。
+5. 用户在使用本文提供的信息、资料、内容、产品和服务时，应自行承担由此产生的全部风险和责任。
+6. 本免责声明的解释、修改和更新权均属于本文所有。
+7. 本文可以被任何人以任何方式进行分发、复制、传播和展示，无需提及原作者。但是，任何人在使用本文时都应该遵守相关的法律法规，并确保不侵犯他人的合法权益。本文不对任何人因使用本文而引起的纠纷、损失或责任承担任何责任。
+
+最后，用户在使用本文的信息、资料、内容、产品和服务时，请务必遵守相关的法律法规，不得利用本文从事任何违法或违规的行为。
+
+本免责声明的任何条款如被裁定为无效或不可执行，不影响其余条款的有效性和可执行性。
+
+<div STYLE="page-break-after: always;"></div>
+
 ## 太长不看
 
 1. 创建一个公开的 B2 存储桶，并记录如下信息，此处以本教程为例；
@@ -40,7 +60,44 @@ output:
 concat("/file/<你的存储桶名称>",http.request.uri.path)
 ```
 
-4. 在 PicGo 中安装 S3 插件，按下表填写相关信息
+4. 在 PicGo 中安装 S3 插件，按下表内容配置；
+
+|        配置项        |        值        |
+| :------------------: | :--------------: |
+|    `应用密钥 ID`     |     `KeyID`      |
+|      `应用密钥`      | `applicationKey` |
+|         `桶`         |   `存储桶名称`   |
+|        `地区`        |      `地区`      |
+|     `自定义节点`     |    `Endpoint`    |
+|     `自定义域名`     | `CNAME 解析记录` |
+|  `PathStyleAccess`   |       `no`       |
+| `rejectUnauthorized` |       `no`       |
+|  `ACL 访问控制列表`  |     保持默认     |
+
+5. 在 AList 中按下表内容配置；
+
+|     配置项     |        值        |
+| :------------: | :--------------: |
+|     `驱动`     |    `对象存储`    |
+|   `挂载路径`   |      自定义      |
+| `根文件夹路径` |      自定义      |
+|    `存储桶`    |   `存储桶名称`   |
+|   `Endpoint`   |    `Endpoint`    |
+|     `地区`     |      `地区`      |
+| `访问密钥 Id`  |     `KeyID`      |
+| `安全访问密钥` | `applicationKey` |
+|  `自定义HOST`  | `CNAME 解析记录` |
+|  `移除bucket`  |     打开开关     |
+
+6. 在 Mountain Duck 中按下表内容配置。
+
+|         配置项         |        值        |
+| :--------------------: | :--------------: |
+|         `名称`         |      自定义      |
+| `Account ID or Key ID` |     `KeyID`      |
+|   `Application Key`    | `applicationKey` |
+
+<div STYLE="page-break-after: always;"></div>
 
 ## 前言
 
@@ -124,6 +181,103 @@ Backblaze在对象存储领域有以下优点，使其成为用户选择的理�
 3. 强大的可靠性和冗余机制：对象存储系统通常具备高度可靠性和冗余机制，能够保证图像和文件的数据完整性和可用性。它们会自动进行数据多副本存储和数据修复，以应对硬件故障和数据损坏的情况。
 
 虽然GitHub、Gitee或其他支持直链的网盘也可以用作图床/文件床，但相比之下，对象存储在大规模存储、可靠性、可扩展性和性能方面更具优势。对象存储专注于提供高效、经济且可靠的数据存储解决方案，适用于图床/文件床等场景。而GitHub、Gitee或其他网盘服务则更适合代码版本控制、项目管理和协作等用途，它们的设计目标和重点略有不同。选择对象存储作为图床/文件床取决于用户对存储性能、可靠性和扩展性的需求。
+
+### 什么是 PicGo （本节内容来自 [PicGo](https://molunerfinn.com/PicGo/) ）
+
+#### PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具
+
+PicGo 本体支持如下图床：
+
+- `七牛图床` v1.0
+- `腾讯云 COS v4\v5 版本` v1.1 & v1.5.0
+- `又拍云` v1.2.0
+- `GitHub` v1.5.0
+- `SM.MS V2` v2.3.0-beta.0
+- `阿里云 OSS` v1.6.0
+- `Imgur` v1.6.0
+
+**本体不再增加默认的图床支持。你可以自行开发第三方图床插件。详见 [PicGo-Core](https://picgo.github.io/PicGo-Core-Doc/)**。
+
+#### 特色功能
+
+- 支持拖拽图片上传
+- 支持快捷键上传剪贴板里第一张图片
+- Windows 和 macOS 支持右键图片文件通过菜单上传 (v2.1.0+)
+- 上传图片后自动复制链接到剪贴板
+- 支持自定义复制到剪贴板的链接格式
+- 支持修改快捷键，默认快速上传快捷键：`command+shift+p`（macOS）| `control+shift+p`（Windows\\Linux)
+- 支持插件系统，已有插件支持 Gitee、青云等第三方图床
+  - 更多第三方插件以及使用了 PicGo 底层的应用可以在 [Awesome-PicGo](https://github.com/PicGo/Awesome-PicGo) 找到。欢迎贡献！
+- 支持通过发送 HTTP 请求调用 PicGo 上传（v2.2.0+)
+- 更多功能等你自己去发现，同时也会不断开发新功能
+  - 开发进度可以查看 [Projects](https://github.com/Molunerfinn/PicGo/projects)，会同步更新开发进度
+
+### 什么是 AList （本节内容来自 [Home | AList文档](https://alist.nn.ci/zh/) ）
+
+🗂一个支持多存储的文件列表程序，使用 Gin 和 Solidjs 。
+
+#### 功能
+
+- [x] 多种存储
+  - [x] 本地存储
+  - [x] [阿里云盘](https://www.aliyundrive.com/)
+  - [x] OneDrive / Sharepoint（[国际版](https://www.office.com/), [世纪互联](https://portal.partner.microsoftonline.cn),de,us）
+  - [x] [天翼云盘](https://cloud.189.cn) (个人云, 家庭云)
+  - [x] [GoogleDrive](https://drive.google.com/)
+  - [x] [123云盘](https://www.123pan.com/)
+  - [x] FTP / SFTP
+  - [x] [PikPak](https://www.mypikpak.com/)
+  - [x] [S3](https://aws.amazon.com/cn/s3/)
+  - [x] [Seafile](https://seafile.com/)
+  - [x] [又拍云对象存储](https://www.upyun.com/products/file-storage)
+  - [x] WebDav(支持无API的OneDrive/SharePoint)
+  - [x] Teambition（[中国](https://www.teambition.com/ )，[国际](https://us.teambition.com/ )）
+  - [x] [分秒帧](https://www.mediatrack.cn/)
+  - [x] [和彩云](https://yun.139.com/) (个人云, 家庭云)
+  - [x] [Yandex.Disk](https://disk.yandex.com/)
+  - [x] [百度网盘](http://pan.baidu.com/)
+  - [x] [UC网盘](https://drive.uc.cn)
+  - [x] [夸克网盘](https://pan.quark.cn)
+  - [x] [迅雷网盘](https://pan.xunlei.com)
+  - [x] [蓝奏云](https://www.lanzou.com/)
+  - [x] [阿里云盘分享](https://www.aliyundrive.com/)
+  - [x] [谷歌相册](https://photos.google.com/)
+  - [x] [Mega.nz](https://mega.nz)
+  - [x] [一刻相册](https://photo.baidu.com/)
+  - [x] SMB
+  - [x] [115](https://115.com/)
+  - [X] Cloudreve
+- [x] 部署方便，开箱即用
+- [x] 文件预览（PDF、markdown、代码、纯文本……）
+- [x] 画廊模式下的图像预览
+- [x] 视频和音频预览，支持歌词和字幕
+- [x] Office 文档预览（docx、pptx、xlsx、...）
+- [x] `README.md` 预览渲染
+- [x] 文件永久链接复制和直接文件下载
+- [x] 黑暗模式
+- [x] 国际化
+- [x] 受保护的路由（密码保护和身份验证）
+- [x] [WebDav](https://alist.nn.ci/zh/guide/webdav.html)
+- [x] [Docker 部署](https://hub.docker.com/r/xhofe/alist)
+- [x] Cloudflare workers 中转
+- [x] 文件/文件夹打包下载
+- [x] 网页上传(可以允许访客上传)，删除，新建文件夹，重命名，移动，复制
+- [x] 离线下载
+- [x] 跨存储复制文件
+
+### 什么是 Mountain Duck (本节内容来自 [Mountain Duck](https://mountainduck.io/) )
+
+Cyberduck for mounting volumes in the file explorer.
+Mountain Duck lets you mount server and cloud storage as a disk in Finder on macOS and the File Explorer on Windows. Open remote files with any application and work like on a local volume.
+
+> 用于在文件资源管理器中装载卷的Cyberduck。
+> Mountain Duck允许您在macOS上的Finder和Windows上的文件资源管理器中将服务器和云存储安装为磁盘。使用任何应用程序打开远程文件，然后像在本地卷上一样工作。
+
+支持挂载 `FTP` 、 `SFTP` 、 `WebDAV` 、 `OpenStack Swift` 、 `S3` 、 `Google Cloud Storage` 、 `Azure` 、 `Backblaze B2` 、 `Google Drive` 、 `Dropbox` 、 `OneDrive` 、 `Box` 等存储。
+
+<figure><img src="https://file.uijxmug.top/2023/06/42c8e9ad1e42e28d8eae75369856dc62.png" alt="20230622104920" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+<div STYLE="page-break-after: always;"></div>
 
 ## 注册 Backblaze 和创建 B2 存储桶
 
@@ -210,16 +364,24 @@ Backblaze在对象存储领域有以下优点，使其成为用户选择的理�
 |     `KeyID`      |             `KeyID`              |
 | `applicationKey` |         `applicationKey`         |
 
+<div STYLE="page-break-after: always;"></div>
+
 ## Cloudflare 中的配置
 
 ### 为存储桶开启 Cloudflare CDN 功能
 
 > 此处默认读者已经拥有了自己的 Cloudflare 账号，如没有请自行申请。
-> 自行查询如何添加 DNS 解析记录（我在之前的教程中详细写过，此教程不再赘述）
+> 自行查询如何添加 DNS 解析记录（我在[之前的教程](https://azure.uijxmug.top/#%E6%B7%BB%E5%8A%A0-dns-%E8%A7%A3%E6%9E%90%E8%AE%B0%E5%BD%95)中详细写过，此教程不再赘述）
 
-添加一条 `CNAME` 解析记录，目标为 `友好 URL` ， `代理状态` 下面的开关打开。
+1. 添加一条 `CNAME` 解析记录，目标为 `友好 URL` ， `代理状态` 下面的开关打开；
 
 <figure><img src="https://file.uijxmug.top/2023/06/fc45c1ef7d3069ad6cde13e6f8cc8962.png" alt="20230621222105" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+2. 记录如下内容以备后用。
+
+|       名称       |       值        |
+| :--------------: | :-------------: |
+| `CNAME 解析记录` | `b2.<你的域名>` |
 
 ### 使用 Cloudflare 隐藏直链中的存储桶名称
 
@@ -243,4 +405,107 @@ concat("/file/<你的存储桶名称>",http.request.uri.path)
 
 <figure><img src="https://file.uijxmug.top/2023/06/81dbc7351b06c341958e9d6460f9046f.png" alt="20230621223911" style="max-width:100%; display: block; margin: 0 auto;"></figure>
 
-5. 点击右下角 `部署` ，等待片刻完成部署。
+5. 点击右下角 `部署` ，等待片刻完成部署；
+
+<div STYLE="page-break-after: always;"></div>
+
+## 在 PicGo 中配置 B2 对象存储
+
+### 安装 PicGo （本节内容来自 [PicGo is Here | PicGo](https://picgo.github.io/PicGo-Doc/zh/guide/#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85) ）
+
+|                       下载源                       |                                                       地址/安装方式                                                        |    平台    |
+| :------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: | :--------: |
+|                   GitHub Release                   |               [https://github.com/Molunerfinn/PicGo/releases](https://github.com/Molunerfinn/PicGo/releases)               |    All     |
+| [腾讯云COS](https://cloud.tencent.com/product/cos) |      [https://github.com/Molunerfinn/PicGo/releases](https://github.com/Molunerfinn/PicGo/releases) 附在更新日志结尾       |    All     |
+|   [山东大学镜像站](https://mirrors.sdu.edu.cn/)    | [https://mirrors.sdu.edu.cn/github-release/Molunerfinn_PicGo](https://mirrors.sdu.edu.cn/github-release/Molunerfinn_PicGo) |    All     |
+|             [Scoop](https://scoop.sh/)             |                 `scoop bucket add helbing https://github.com/helbing/scoop-bucket` & `scoop install picgo`                 |  Windows   |
+|       [Chocolatey](https://chocolatey.org/)        |                                                   `choco install picgo`                                                    |  Windows   |
+|            [Homebrew](https://brew.sh/)            |                                                `brew install picgo --cask`                                                 |   macOS    |
+|   [AUR](https://aur.archlinux.org/packages/yay)    |                                                  `yay -S picgo-appimage`                                                   | Arch-Linux |
+
+### 安装 s3 插件
+
+打开 PicGo 软件主界面，点击左侧 `插件设置` ，在搜索框输入 `s3` ，点击安装 `s3 1.3.1` （截止本文创作时，该插件版本为 1.3.1 ，以最新版本为准）；
+
+<figure><img src="https://file.uijxmug.top/2023/06/abb1f39c9c4b5cdb372bc6dafe911afa.png" alt="20230622094453" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+### 配置 s3 插件
+
+1. 找出之前统计好的信息（**具体值以你自己的为准**，此处以本教程为例）；
+
+|       名称       |                值                |
+| :--------------: | :------------------------------: |
+|     `KeyID`      |             `KeyID`              |
+| `applicationKey` |         `applicationKey`         |
+|   `存储桶名称`   |          你的存储桶名称          |
+|      `地区`      |          `us-west-004`           |
+|    `Endpoint`    | `s3.us-west-004.backblazeb2.com` |
+| `CNAME 解析记录` |         `b2.<你的域名>`          |
+
+2. 点击左侧 `图床设置` ， `Amazon S3` ，按照下表对应关系填写红框内的内容；
+
+|    配置项     | 对应上表中的名称 |                    值                    |
+| :-----------: | :--------------: | :--------------------------------------: |
+| `应用密钥 ID` |     `KeyID`      |                 `KeyID`                  |
+|  `应用密钥`   | `applicationKey` |             `applicationKey`             |
+|     `桶`      |   `存储桶名称`   |              你的存储桶名称              |
+|    `地区`     |      `地区`      |              `us-west-004`               |
+| `自定义节点`  |    `Endpoint`    | `https://s3.us-west-004.backblazeb2.com` |
+| `自定义域名`  | `CNAME 解析记录` |         `https://b2.<你的域名>`          |
+
+<figure><img src="https://file.uijxmug.top/2023/06/63f084ef2e7457f9e2c121a287d577ed.png" alt="20230622100426" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+3. `PathStyleAccess` 和 `rejectUnauthorized` 都选择 `no` ， `ACL 访问控制列表` 保持默认，点击下方 `确定` 完成配置。
+
+<figure><img src="https://file.uijxmug.top/2023/06/a12d3b518b20eeff39a99f599d856e24.png" alt="20230622102215" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+<div STYLE="page-break-after: always;"></div>
+
+## 在 AList 中配置 B2 对象存储
+
+1. 登陆自己 AList 管理页面，点击左侧 `存储` ，按照下表对应关系填写红框内的内容。确认信息无误后点击下方 `添加` ；
+
+|     配置项     |                    值                    |
+| :------------: | :--------------------------------------: |
+|     `驱动`     |                `对象存储`                |
+|   `挂载路径`   |      `/<起一个自己能认出来的名字>`       |
+| `根文件夹路径` |                   `/`                    |
+|    `存储桶`    |              你的存储桶名称              |
+|   `Endpoint`   | `https://s3.us-west-004.backblazeb2.com` |
+|     `地区`     |              `us-west-004`               |
+| `访问密钥 Id`  |                 `KeyID`                  |
+| `安全访问密钥` |             `applicationKey`             |
+|  `自定义HOST`  |         `https://b2.<你的域名>`          |
+|  `移除bucket`  |                 打开开关                 |
+
+<figure><img src="https://file.uijxmug.top/2023/06/1ca6a1e4aaf5f0b42a16e88346505ab7.png" alt="20230622105631" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+<figure><img src="https://file.uijxmug.top/2023/06/032dac9fe8ab66ad138f5529e320bf76.png" alt="20230622110405" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+<figure><img src="https://file.uijxmug.top/2023/06/dd919824fdee68f6563a7dc9cb715a98.png" alt="20230622110752" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+2. 去自己 AList 主页查看是否添加成功。
+
+<div STYLE="page-break-after: always;"></div>
+
+## 在 Mountain Duck 中配置 B2 对象存储
+
+> 此处以 macOS 为例，Windows 相同。
+
+1. 打开 Mountain Duck ，点击 `Open Connection...` ；
+
+<figure><img src="https://file.uijxmug.top/2023/06/4ee630967d2c43eb98546b1a398812ef.png" alt="20230622111628" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+2. 最顶上选择 `Backblaze B2 Cloud Storage` ，按照下表对应关系填写红框内的内容。确认信息无误后点击下方 `Connect` ；
+
+|         配置项         |              值              |
+| :--------------------: | :--------------------------: |
+|         `名称`         | `<起一个自己能认出来的名字>` |
+| `Account ID or Key ID` |           `KeyID`            |
+|   `Application Key`    |       `applicationKey`       |
+
+<figure><img src="https://file.uijxmug.top/2023/06/bba553d26ff788194fac2e134137d8a4.png" alt="20230622112022" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+
+2. 打开访达查看是否添加成功。
+
+<figure><img src="https://file.uijxmug.top/2023/06/64d18f36161d2862575eafb1624cbddb.png" alt="20230622112654" style="max-width:100%; display: block; margin: 0 auto;"></figure>
