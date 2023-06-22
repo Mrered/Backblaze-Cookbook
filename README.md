@@ -108,7 +108,9 @@ concat("/file/<你的存储桶名称>",http.request.uri.path)
 
 <figure><img src="https://file.uijxmug.top/2023/06/fc54f7b6832167c63289b700a3ab6acb.png" alt="20230621210852" style="max-width:100%; display: block; margin: 0 auto;"></figure>
 
-<figure><img src="https://file.uijxmug.top/2023/06/1faec6b1199c066e58621b7eca60cddd.png" alt="20230621210259" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/1faec6b1199c066e58621b7eca60cddd.png" alt="20230621210259" style="max-width:80%; display: block; margin: 0 auto;"></figure>
+
+3. 文件床有多香我想不用我多说了吧，不受网速限制，直链分享，无内容过滤。
 
 ### 什么是对象存储？（本节内容来自 ChatGPT）
 
@@ -184,21 +186,9 @@ Backblaze在对象存储领域有以下优点，使其成为用户选择的理�
 
 ### 什么是 PicGo （本节内容来自 [PicGo](https://molunerfinn.com/PicGo/) ）
 
-#### PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具
+PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具。
 
-PicGo 本体支持如下图床：
-
-- `七牛图床` v1.0
-- `腾讯云 COS v4\v5 版本` v1.1 & v1.5.0
-- `又拍云` v1.2.0
-- `GitHub` v1.5.0
-- `SM.MS V2` v2.3.0-beta.0
-- `阿里云 OSS` v1.6.0
-- `Imgur` v1.6.0
-
-**本体不再增加默认的图床支持。你可以自行开发第三方图床插件。详见 [PicGo-Core](https://picgo.github.io/PicGo-Core-Doc/)**。
-
-#### 特色功能
+功能：
 
 - 支持拖拽图片上传
 - 支持快捷键上传剪贴板里第一张图片
@@ -216,7 +206,7 @@ PicGo 本体支持如下图床：
 
 🗂一个支持多存储的文件列表程序，使用 Gin 和 Solidjs 。
 
-#### 功能
+功能：
 
 - [x] 多种存储
   - [x] 本地存储
@@ -275,7 +265,7 @@ Mountain Duck lets you mount server and cloud storage as a disk in Finder on mac
 
 支持挂载 `FTP` 、 `SFTP` 、 `WebDAV` 、 `OpenStack Swift` 、 `S3` 、 `Google Cloud Storage` 、 `Azure` 、 `Backblaze B2` 、 `Google Drive` 、 `Dropbox` 、 `OneDrive` 、 `Box` 等存储。
 
-<figure><img src="https://file.uijxmug.top/2023/06/42c8e9ad1e42e28d8eae75369856dc62.png" alt="20230622104920" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/42c8e9ad1e42e28d8eae75369856dc62.png" alt="20230622104920" style="max-width:60%; display: block; margin: 0 auto;"></figure>
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -285,7 +275,7 @@ Mountain Duck lets you mount server and cloud storage as a disk in Finder on mac
 
 1. 直接进入 [B2 对象存储](https://www.backblaze.com/b2/cloud-storage.html) 页面注册账号，红框位置选择 `US West` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/d32ab7e75c21874e7a314dea2fe8aba4.png" alt="20230621211830" style="max-width:60%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/d32ab7e75c21874e7a314dea2fe8aba4.png" alt="20230621211830" style="max-width:50%; display: block; margin: 0 auto;"></figure>
 
 2. 在登陆页面将语言改为 `简体中文` 。
 
@@ -295,11 +285,11 @@ Mountain Duck lets you mount server and cloud storage as a disk in Finder on mac
 
 1. 点击 `创作一个桶` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/ce2ed07cc2f83cb8041c3343cc2a0fa6.png" alt="20230621212233" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/ce2ed07cc2f83cb8041c3343cc2a0fa6.png" alt="20230621212233" style="max-width:80%; display: block; margin: 0 auto;"></figure>
 
 2. 输入桶的名字需要全球唯一， `桶里面的档案是` 选择 `公众` ，点击下方 `创作一个桶` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/4db66d1dfe966cbd52b1d026a20df37a.png" alt="20230621212418" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/4db66d1dfe966cbd52b1d026a20df37a.png" alt="20230621212418" style="max-width:60%; display: block; margin: 0 auto;"></figure>
 
 3. 稍等片刻创建成功后，以下图为例，记录如下内容以备后用；
 
@@ -309,15 +299,15 @@ Mountain Duck lets you mount server and cloud storage as a disk in Finder on mac
 |  `Endpoint`  | `s3.us-west-004.backblazeb2.com` |
 |    `地区`    |          `us-west-004`           |
 
-<figure><img src="https://file.uijxmug.top/2023/06/ed5c9d96e9ac97865c1c8303b09e413f.png" alt="20230621212834" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/ed5c9d96e9ac97865c1c8303b09e413f.png" alt="20230621212834" style="max-width:80%; display: block; margin: 0 auto;"></figure>
 
 4. （此步骤可选）点击 `桶设定` ， `桶信息` 填入 `{"cache-control":"max-age=86400"}` ，点击 `更新桶` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/facd7ed946bc3816c35c14408ad294c0.png" alt="20230621213402" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/facd7ed946bc3816c35c14408ad294c0.png" alt="20230621213402" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 5. 点击 `CORS 规则` ，按照下图选择，点击 `Update CORS Rules` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/aa8bb96efaca1238471622a5c61ec8de.png" alt="20230621213808" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/aa8bb96efaca1238471622a5c61ec8de.png" alt="20230621213808" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 ### 获取友好 URL
 
@@ -341,15 +331,15 @@ Mountain Duck lets you mount server and cloud storage as a disk in Finder on mac
 
 2. 向下滑动点击 `添加新的应用程序密钥` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/12c6072bdcd5ed62281cdaa15b5cdc28.png" alt="20230621214351" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/12c6072bdcd5ed62281cdaa15b5cdc28.png" alt="20230621214351" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 3. 输入 `密钥的名称` ， `允许访问Bucket（s）` 选择刚刚创建的存储桶，==注意红框位置必须和下图一致==，点击 `Create New Key` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/34e42b25ec5ef9411fd46c0f149f5489.png" alt="20230621214541" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/34e42b25ec5ef9411fd46c0f149f5489.png" alt="20230621214541" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 4. ==此内容仅会出现一次==，若操作失误已无法查看，重新创建密钥即可。记录 `KeyID` 和 `applicationKey` 以备后用。
 
-<figure><img src="https://file.uijxmug.top/2023/06/cd9692df780863e373bf48fed33f8ef2.png" alt="20230621214834" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/cd9692df780863e373bf48fed33f8ef2.png" alt="20230621214834" style="max-width:80%; display: block; margin: 0 auto;"></figure>
 
 ### 备用信息汇总
 
@@ -453,11 +443,11 @@ concat("/file/<你的存储桶名称>",http.request.uri.path)
 | `自定义节点`  |    `Endpoint`    | `https://s3.us-west-004.backblazeb2.com` |
 | `自定义域名`  | `CNAME 解析记录` |         `https://b2.<你的域名>`          |
 
-<figure><img src="https://file.uijxmug.top/2023/06/63f084ef2e7457f9e2c121a287d577ed.png" alt="20230622100426" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/63f084ef2e7457f9e2c121a287d577ed.png" alt="20230622100426" style="max-width:80%; display: block; margin: 0 auto;"></figure>
 
 3. `PathStyleAccess` 和 `rejectUnauthorized` 都选择 `no` ， `ACL 访问控制列表` 保持默认，点击下方 `确定` 完成配置。
 
-<figure><img src="https://file.uijxmug.top/2023/06/a12d3b518b20eeff39a99f599d856e24.png" alt="20230622102215" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/a12d3b518b20eeff39a99f599d856e24.png" alt="20230622102215" style="max-width:80%; display: block; margin: 0 auto;"></figure>
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -494,7 +484,7 @@ concat("/file/<你的存储桶名称>",http.request.uri.path)
 
 1. 打开 Mountain Duck ，点击 `Open Connection...` ；
 
-<figure><img src="https://file.uijxmug.top/2023/06/4ee630967d2c43eb98546b1a398812ef.png" alt="20230622111628" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/4ee630967d2c43eb98546b1a398812ef.png" alt="20230622111628" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 2. 最顶上选择 `Backblaze B2 Cloud Storage` ，按照下表对应关系填写红框内的内容。确认信息无误后点击下方 `Connect` ；
 
@@ -504,7 +494,7 @@ concat("/file/<你的存储桶名称>",http.request.uri.path)
 | `Account ID or Key ID` |           `KeyID`            |
 |   `Application Key`    |       `applicationKey`       |
 
-<figure><img src="https://file.uijxmug.top/2023/06/bba553d26ff788194fac2e134137d8a4.png" alt="20230622112022" style="max-width:100%; display: block; margin: 0 auto;"></figure>
+<figure><img src="https://file.uijxmug.top/2023/06/bba553d26ff788194fac2e134137d8a4.png" alt="20230622112022" style="max-width:70%; display: block; margin: 0 auto;"></figure>
 
 2. 打开访达查看是否添加成功。
 
